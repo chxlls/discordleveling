@@ -56,7 +56,6 @@ bot.on("message", async message => {
   let levelembed = new Discord.RichEmbed()
   .setDescription(`${message.author}, You have leveled up to level ${levelfetch}`)
    message.channel.send(levelembed)
-    bot.users.get('268474804699398154').send(`${message.author.username} has leveled up to Level ${levelfetch}`)
   }
   
  
