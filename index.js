@@ -3,6 +3,7 @@ const Discord = require("discord.js");
 const bot = new Discord.Client({disableEveryone: true});
 const fs = require("fs");
 const db = require("quick.db");
+const {token} = require('./botconfig.json')
 bot.commands = new Discord.Collection();
 
 fs.readdir("./commands/", (err, files) => {
@@ -23,7 +24,7 @@ fs.readdir("./commands/", (err, files) => {
 });
 
 bot.on("ready", async () => {
-  console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
+  console.log(`${bot.user.username} is online on ${bot.guilds.cache.size} servers!`);
   bot.user.setActivity(`Loading Online Users...`);
   bot.user.setStatus('online');
 })
@@ -65,4 +66,4 @@ bot.on("message", async message => {
 
 
 
-bot.login("");
+bot.login(token);

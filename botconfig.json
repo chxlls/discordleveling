@@ -1,4 +1,5 @@
 {
+  "token": "insert-bot-token-here",
   "prefix": "!",
   "red": "#b70000",
   "orange": "#ff6a00",
